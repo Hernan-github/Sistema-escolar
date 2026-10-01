@@ -7,4 +7,4 @@ const clienteSupabase = window.supabase.createClient(
     SUPABASE_ANON_KEY
 );
 
-console.log("Cliente Supabase creado:", clienteSupabase);
+//console.log("Cliente Supabase creado:", clienteSupabase);

@@ -1,12 +1,15 @@
 document.addEventListener("DOMContentLoaded", async () => {
 
+    // Comprobar que exista una sesión válida
     const datos = await obtenerUsuarioActual();
 
-    // No hay sesión o usuario
     if (!datos) {
-        window.location.href = "login.html";
+        console.error("❌ obtenerUsuarioActual() devolvió NULL");
+        console.log("⛔ NO se redirigirá al login para poder revisar el error");
+        //window.location.href = "login.html";
         return;
     }
+
 
     const {
         usuario,
@@ -14,11 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         escuela
     } = datos;
 
-
-    // =========================================================
-    // INFORMACIÓN DEL USUARIO
-    // =========================================================
-
+    // Mostrar correo
     const correoUsuario =
         document.getElementById("correoUsuario");
 
@@ -26,59 +25,44 @@ document.addEventListener("DOMContentLoaded", async () => {
         correoUsuario.textContent = usuario.correo;
     }
 
-
+    // Mostrar nombre
     const nombreUsuario =
         document.getElementById("nombreUsuario");
 
     if (nombreUsuario) {
-
         nombreUsuario.textContent =
             `${usuario.nombres} ${usuario.ap_paterno}`;
     }
 
-
+    // Mostrar rol
     const rolUsuario =
         document.getElementById("rolUsuario");
 
-    if (rolUsuario) {
+    if (rolUsuario && rol) {
         rolUsuario.textContent = rol.nombre;
     }
 
-
+    // Mostrar escuela
     const escuelaUsuario =
         document.getElementById("escuelaUsuario");
 
-    if (escuelaUsuario) {
+    if (escuelaUsuario && escuela) {
         escuelaUsuario.textContent =
             escuela.nombre_escuela;
     }
 
-
-    console.log("Usuario:", usuario);
-    console.log("Rol:", rol.nombre);
-    console.log("Escuela:", escuela.nombre_escuela);
-
-
-    // =========================================================
-    // OPCIONES DE ADMINISTRADOR
-    // =========================================================
-
+    // Mostrar/ocultar opciones de administrador
     const opcionUsuarios =
         document.getElementById("opcionUsuarios");
 
-    if (opcionUsuarios) {
+    if (opcionUsuarios && rol) {
 
         if (rol.nombre !== "Administrador") {
-
             opcionUsuarios.style.display = "none";
         }
     }
 
-
-    // =========================================================
-    // CERRAR SESIÓN
-    // =========================================================
-
+    // Cerrar sesión
     const btnCerrarSesion =
         document.getElementById("btnCerrarSesion");
 
