@@ -4,7 +4,7 @@ let escuelaEditando = null;
 
 async function cargarEscuelas() {
 
-    const { data, error } = await supabaseClient
+    const { data, error } = await clienteSupabase
         .from("escuelas")
         .select("*")
         .order("nombre");
