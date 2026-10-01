@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Iniciar sesión - Control Financiero APF</title>
+
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body class="login-page">
+
+    <main class="login-container">
+
+        <section class="login-card">
+
+            <h1>Control Financiero APF</h1>
+
+            <h2>Iniciar sesión</h2>
+
+            <p class="login-subtitle">
+                Ingresa tus credenciales para continuar
+            </p>
+
+            <form id="loginForm">
+
+                <div class="form-group">
+                    <label for="correo">Correo electrónico</label>
+                    <input
+                        type="email"
+                        id="correo"
+                        name="correo"
+                        placeholder="ejemplo@correo.com"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Ingresa tu contraseña"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    Iniciar sesión
+                </button>
+
+                <p id="mensaje" class="mensaje"></p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Configuración de Supabase -->
+    <script src="../config/supabase.js"></script>
+
+    <!-- Lógica del login -->
+    <script src="../js/login.js"></script>
+
+</body>
+
+</html>

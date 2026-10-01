@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escuelas</title>
+    <link rel="stylesheet" href="../css/escuelas.css">
+</head>
+
+<body>
+
+    <div class="escuelas">
+        <!-- ENCABEZADO -->
+        <div class="escuelas-header">
+            <div>
+                <h1>Escuelas</h1>
+                <p>Administración de las escuelas registradas</p>
+            </div>
+
+            <button class="btn-primary" id="btnNuevaEscuela">
+                + Nueva escuela
+            </button>
+        </div>
+
+
+        <!-- RESUMEN -->
+        <div class="escuelas-resumen">
+
+            <div class="resumen-card">
+                <span>Total de escuelas</span>
+                <strong id="totalEscuelas">0</strong>
+            </div>
+
+            <div class="resumen-card">
+                <span>Escuelas activas</span>
+                <strong id="escuelasActivas">0</strong>
+            </div>
+
+            <div class="resumen-card">
+                <span>Escuelas inactivas</span>
+                <strong id="escuelasInactivas">0</strong>
+            </div>
+
+        </div>
+
+
+        <!-- FILTROS -->
+        <div class="escuelas-filtros">
+
+            <div class="campo">
+                <label for="buscar">Buscar escuela</label>
+                <input type="text" id="buscar" placeholder="Nombre o CCT...">
+            </div>
+
+            <div class="campo">
+                <label for="localidad">Localidad</label>
+
+                <select id="localidad">
+                    <option value="">Todas</option>
+                    <option value="Los Mochis">Los Mochis</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="estado">Estado</label>
+
+                <select id="estado">
+                    <option value="">Todos</option>
+                    <option value="activo">Activo</option>
+                    <option value="inactivo">Inactivo</option>
+                </select>
+            </div>
+
+            <button class="btn-filter" id="btnFiltrar">
+                Filtrar
+            </button>
+
+        </div>
+
+
+        <!-- TABLA -->
+        <div class="tabla-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Escuela</th>
+                        <th>CCT</th>
+                        <th>Localidad</th>
+                        <th>Zona</th>
+                        <th>Sector</th>
+                        <th>Turno</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tablaEscuelas">
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- MODAL -->
+        <div class="modal-fondo" id="modalFondo">
+
+            <div class="modal">
+
+                <div class="modal-header">
+
+                    <h2>Nueva escuela</h2>
+
+                    <button class="btn-cerrar" id="btnCerrar">
+                        ×
+                    </button>
+
+                </div>
+
+
+                <!-- FORMULARIO -->
+                <div class="formulario">
+
+                    <div class="campo campo-completo">
+                        <label>Nombre de la escuela</label>
+
+                        <input type="text" id="nombre" placeholder="Nombre de la escuela">
+                    </div>
+
+
+                    <div class="campo">
+                        <label>Clave CCT</label>
+
+                        <input type="text" id="cct" placeholder="25EPR0001A">
+                    </div>
+
+
+                    <div class="campo">
+                        <label>Zona</label>
+
+                        <input type="number" id="zona" placeholder="12">
+                    </div>
+
+
+                    <div class="campo">
+                        <label>Sector</label>
+
+                        <input type="text" id="sector" maxlength="4" placeholder="01">
+                    </div>
+
+
+                    <div class="campo">
+                        <label>Turno</label>
+
+                        <select id="turno">
+
+                            <option value="">
+                                Seleccionar turno
+                            </option>
+
+                            <option value="Matutino">
+                                Matutino
+                            </option>
+
+                            <option value="Vespertino">
+                                Vespertino
+                            </option>
+
+                            <option value="Nocturno">
+                                Nocturno
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="campo campo-completo">
+
+                        <label>Domicilio</label>
+
+                        <input type="text" id="domicilio" placeholder="Domicilio de la escuela">
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label>Localidad</label>
+
+                        <input type="text" id="localidadNueva" placeholder="Localidad">
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label>Teléfono</label>
+
+                        <input type="tel" id="telefono" placeholder="6681234567">
+
+                    </div>
+
+                </div>
+
+
+                <!-- FOOTER MODAL -->
+                <div class="modal-footer">
+
+                    <button class="btn-cancelar" id="btnCancelar">
+                        Cancelar
+                    </button>
+
+                    <button class="btn-primary" id="btnGuardar">
+                        Guardar escuela
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../config/supabase.js"></script>
+    <script src="../js/escuelas.js"></script>
+
+</body>
+
+</html>

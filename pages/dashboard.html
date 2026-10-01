@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - Control Financiero APF</title>
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+            Control Financiero APF
+        </div>
+
+        <button class="btn-logout" id="btnCerrarSesion">
+            Cerrar sesión
+        </button>
+
+    </header>
+
+
+    <main class="dashboard">
+
+        <h1>Dashboard</h1>
+
+        <p>
+            Bienvenido al sistema de Control Financiero APF.
+        </p>
+
+        <section class="cards">
+
+            <div class="card">
+                <h2>Escuelas</h2>
+                <p>Administración de escuelas.</p>
+            </div>
+
+            <div class="card">
+                <h2>Ingresos</h2>
+                <p>Control de ingresos.</p>
+            </div>
+
+            <div class="card">
+                <h2>Gastos</h2>
+                <p>Control de gastos.</p>
+            </div>
+
+            <div class="card">
+                <h2>Reportes</h2>
+                <p>Consulta de reportes financieros.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="../config/supabase.js"></script>
+
+    <script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>
